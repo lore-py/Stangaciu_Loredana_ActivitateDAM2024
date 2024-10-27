@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">seminar4</string>
+    <string name="hint_numeCarte">ex: Crima si pedeapsa</string>
+    <string name="hint_ISBN">ex: 3461237461928</string>
+    <string name="adaugaButtom">Adauga</string>
+    <string name="adaugaCarteButton">Adauga una sau mai multe carti</string>
+</resources>
