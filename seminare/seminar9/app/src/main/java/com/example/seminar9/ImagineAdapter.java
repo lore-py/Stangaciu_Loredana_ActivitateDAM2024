@@ -41,6 +41,8 @@ public class ImagineDomeniuAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(context);
+            View v = inflater.inflate(layoutResursa, parent, false);
+
             convertView = inflater.inflate(layoutResursa, parent, false);
         }
 
