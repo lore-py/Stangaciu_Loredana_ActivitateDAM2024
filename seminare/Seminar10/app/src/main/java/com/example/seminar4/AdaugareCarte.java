@@ -1,17 +1,14 @@
 package com.example.seminar4;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import kotlinx.coroutines.Dispatchers;
 
 public class AdaugareCarte extends AppCompatActivity {
 
@@ -40,13 +37,14 @@ public class AdaugareCarte extends AppCompatActivity {
                 float pret = Float.parseFloat(etPret.getText().toString());
                 boolean inStoc = rbInStocDa.isChecked();
 
-                Librarie librarie = new Librarie(numeCarte, inStoc, isbn, nrBucati, pret);
+                Librarie librarie = new Librarie(isbn, numeCarte, inStoc, nrBucati, pret);
 
-                Intent intent = new Intent(AdaugareCarte.this, MainActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putParcelable("librarie", librarie);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                LibrarieDatabase db = LibrarieDatabase.getDatabase(getApplicationContext());
+                lifecycleScope.launch(Dispatchers.IO) {
+                    db.librarieDao().insert(librarie);
+
+                    runOnUiThread(() -> finish());
+                };
             }
         });
     }
