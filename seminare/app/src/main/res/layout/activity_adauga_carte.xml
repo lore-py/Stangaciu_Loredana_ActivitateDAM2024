@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etTitlu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Titlu" />
+
+    <EditText
+        android:id="@+id/etAutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Autor" />
+
+    <EditText
+        android:id="@+id/etAn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="An"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnAdauga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adaugă" />
+</LinearLayout>

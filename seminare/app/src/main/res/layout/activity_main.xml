@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btnAdaugaCarte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adaugă o Carte" />
+
+    <Button
+        android:id="@+id/btnVeziCarti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vezi Lista de Cărți" />
+
+    <Button
+        android:id="@+id/btnFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vezi Favorite" />
+</LinearLayout>
